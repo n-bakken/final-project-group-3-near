@@ -1,7 +1,7 @@
 package edu.pacific.comp55.ProjectCode;
 import java.awt.Color;
+import acm.program.*;
 import java.awt.event.MouseEvent;
-
 import acm.graphics.GImage;
 import acm.graphics.GObject;
 import edu.pacific.comp55.starter.GButton;

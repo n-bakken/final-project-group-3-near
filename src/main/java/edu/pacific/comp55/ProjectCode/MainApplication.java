@@ -22,6 +22,7 @@ public class MainApplication extends GraphicsApplication {
 	private PausePane pause;
 	private QuitPane quit;
 	private GameOverPane over; 
+	private ScorePane scores;
 	
 	private Game consoleGame;
 	
@@ -62,8 +63,11 @@ public class MainApplication extends GraphicsApplication {
 		game = new GamePane(this);
 		somePane = new SomePane(this);
 		menu = new MenuPane(this);
+		scores = new ScorePane(this);
 		setupInteractions();
 		switchToMenu();
+		
+		//System.out.print("working!");
 	}
 	
 	public void actionPerformed(ActionEvent e) {
@@ -84,6 +88,7 @@ public class MainApplication extends GraphicsApplication {
 		}
 		
 		// scoreLabel
+		//
 		
 		scoreLabel.setFont(Font.MONOSPACED);
 		// score.setColor(Color.WHITE);
@@ -145,6 +150,10 @@ public class MainApplication extends GraphicsApplication {
 	
 	public void switchToGameOver() {
 		switchToScreen(over);
+	}
+	
+	public void switchToScore() {
+		switchToScreen(scores);
 	}
 	
 	/*public void displayBlock(Block b) {
