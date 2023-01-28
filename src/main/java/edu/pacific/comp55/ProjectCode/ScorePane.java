@@ -113,9 +113,9 @@ public class ScorePane extends GraphicsPane {
 	 //SHOW SHOWARRAY (these will need to be called BEFORE the game switches to this pane!)
 	   public void readyLeaderboard(){
 	     //call all of the above functions, in the order they appear above
-		   openAndReadFile();
-		   insertionSortScores();
-		   initTopFiveScores();
+		 openAndReadFile();
+		 insertionSortScores();
+		 initTopFiveScores();
 	   }
 	   public void showLeaderboard(){
 	     readyLeaderboard();
