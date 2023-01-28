@@ -156,7 +156,7 @@ public class MainApplication extends GraphicsApplication {
 		switchToScreen(scores);
 	}
 	
-	/*public void displayBlock(Block b) {
+	/*public void displayBlock(Block b) {//
 		
 		Space[] space = new Space[4];
 		if (b.getBlockType() == BlockType.BAR) {
