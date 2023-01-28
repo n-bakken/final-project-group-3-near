@@ -11,8 +11,7 @@ import edu.pacific.comp55.starter.GraphicsPane;
 
 public class ScorePane extends GraphicsPane {
 	
-	private MainApplication program; // you will use program to get access to
-	// all of the GraphicsProgram calls
+	private MainApplication program;
 	private GImage background;
 	private GButton returnMessage;
 	
@@ -20,8 +19,6 @@ public class ScorePane extends GraphicsPane {
 		this.program = app;
 		background = new GImage("game1.png", 0, 0);
 		background.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT);
-		//para = new GParagraph("welcome\nto my\nsecret room!", 150, 300);
-		//para.setFont("Arial-24");
 		returnMessage = new GButton("Click anywhere to return to main menu.", 0, 0, 500, 50);
 		returnMessage.setFillColor(Color.yellow);
 		returnMessage.setVisible(true);
@@ -31,18 +28,15 @@ public class ScorePane extends GraphicsPane {
 	public void showContents() {
 		program.add(background);
 		program.add(returnMessage);
-		//program.add(para);
 	}
 
 	@Override
 	public void hideContents() {
 		program.remove(background);
-		//program.remove(para);
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		//para.setText("you need\nto click\non the eyes\nto go back");
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == background) {
 			program.switchToMenu();

@@ -4,6 +4,11 @@ public class Score {
 	private int myScore;
 	private String myName;
 	
+	Score(int someScore, String someName){
+		myScore = someScore;
+		myName = someName;
+	}
+	
 	public int getScore() {
 		return myScore;
 	}
