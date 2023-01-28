@@ -55,19 +55,35 @@ public class ScorePane extends GraphicsPane {
 	}
 	
 	//METHOD TO OPEN A TEXT FILE, WITH ERROR HANDLING
-	private void openFile() {
+	//METHOD TO READ FROM THE FILE, AND MAKE THE CONTENTS INTO SCORES IN AN ARRAYLIST
+	private void openAndReadFile() {
 		try {
 			//open the file as normal
 			File scoreFile = new File("scores.txt");
 			Scanner myReader = new Scanner(scoreFile);
+			int count = 0;
+			int tempScore = 0;
+			String tempName = "";
+			while(myReader.hasNextLine()) {
+				if(count%2 == 0) { //even number, scores are first
+					//gotta cast it to integer...
+					tempScore = Integer.parseInt(myReader.nextLine());
+				}
+				else { //odd number, must be a name
+					//its the second thing, so make it a score and add to the array!
+					tempName = myReader.nextLine();
+					Score addMe = new Score(tempScore, tempName);
+					scoreList.add(addMe);
+				}
+				count++;
+			}
+			myReader.close();
 		} catch (FileNotFoundException f) {
 			System.out.println("the scores file couldn't be found!");
+			return;
 		}
 	}	
-	//METHOD TO READ FROM THE FILE, AND MAKE THE CONTENTS INTO SCORES IN AN ARRAYLIST
-	private void fileToScore() {
-		
-	}
+
 	//METHOD TO SORT THE ARRAYLIST
 	
 	//METHOD TO GRAB FIRST 5 ELEMENTS IN THE ARRAY LIST, IN SHOWARRAY
