@@ -7,6 +7,9 @@ import javax.swing.Timer;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 import acm.graphics.GLabel;
 import edu.pacific.comp55.starter.AudioPlayer;
@@ -35,7 +38,8 @@ public class MainApplication extends GraphicsApplication {
 	private GLabel scoreLabel;
 	private GLabel score;
 	
-	private FileWriter myWriter;
+	//public FileWriter myWriter;
+	//public File scoreFile;
 	
 	public int min = 0;
 	public int sec = 0;
@@ -158,10 +162,28 @@ public class MainApplication extends GraphicsApplication {
 		switchToScreen(over);
 	}
 	
+//	private void tryFile() {
+//		try {
+//			File scoreFile = new File("scores.txt");
+//			Scanner myReader = new Scanner(scoreFile);
+//			while (myReader.hasNextLine()) {
+//		        String data = myReader.nextLine();
+//		        System.out.println(data);
+//		    }
+//			System.out.println("file behaving as expected");
+//			myReader.close();
+//		} catch (Exception h) {
+//			//the file couldn't be found, so make a new one
+//			System.out.println("catch in try catch, file couldn't be found");
+//			//make
+//		}
+//	}
+//	
 	private void writeScore() {
 		try {
 			//TODO: this isn't working!
-			FileWriter myWriter = new FileWriter("file.txt");
+			//tryFile();
+			FileWriter myWriter = new FileWriter("scores.txt");
 		    myWriter.write(game.getScore());
 		    myWriter.write("player name");
 		    myWriter.close();
