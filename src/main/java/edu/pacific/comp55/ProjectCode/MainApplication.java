@@ -5,6 +5,9 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.Timer;
 
+import java.io.FileWriter;
+import java.io.IOException;
+
 import acm.graphics.GLabel;
 import edu.pacific.comp55.starter.AudioPlayer;
 import edu.pacific.comp55.starter.GraphicsApplication;
@@ -23,7 +26,6 @@ public class MainApplication extends GraphicsApplication {
 	private QuitPane quit;
 	private GameOverPane over; 
 	private ScorePane scores;
-	
 	private Game consoleGame;
 	
 	private Block block;	
@@ -32,6 +34,8 @@ public class MainApplication extends GraphicsApplication {
 	private GLabel timer;
 	private GLabel scoreLabel;
 	private GLabel score;
+	
+	private FileWriter myWriter;
 	
 	public int min = 0;
 	public int sec = 0;
@@ -149,7 +153,22 @@ public class MainApplication extends GraphicsApplication {
 	}
 	
 	public void switchToGameOver() {
+		//add score to leaderboard first!
+		writeScore();
 		switchToScreen(over);
+	}
+	
+	private void writeScore() {
+		try {
+			//TODO: this isn't working!
+			FileWriter myWriter = new FileWriter("file.txt");
+		    myWriter.write(game.getScore());
+		    myWriter.write("player name");
+		    myWriter.close();
+		    System.out.println("Successfully wrote to the file.");
+		} catch (IOException e) {
+		    System.out.println("An error occurred in adding score to leaderboard.");
+		}
 	}
 	
 	public void switchToScore() {
