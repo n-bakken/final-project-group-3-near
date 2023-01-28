@@ -1,5 +1,7 @@
 package edu.pacific.comp55.ProjectCode;
-
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 
@@ -8,12 +10,21 @@ import acm.graphics.GLabel;
 import acm.graphics.GObject;
 import edu.pacific.comp55.starter.GButton;
 import edu.pacific.comp55.starter.GraphicsPane;
+import java.util.ArrayList;
 
 public class ScorePane extends GraphicsPane {
 	
 	private MainApplication program;
 	private GImage background;
 	private GButton returnMessage;
+	
+	private ArrayList<Score> scoreList;
+	private ArrayList<Score> topFiveList;
+	private GLabel score1;
+	private GLabel score2;
+	private GLabel score3;
+	private GLabel score4;
+	private GLabel score5;
 	
 	public ScorePane(MainApplication app) {
 		this.program = app;
