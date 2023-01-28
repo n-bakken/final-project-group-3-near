@@ -33,6 +33,8 @@ public class ScorePane extends GraphicsPane {
 		returnMessage = new GButton("Click anywhere to return to main menu.", 0, 0, 500, 50);
 		returnMessage.setFillColor(Color.yellow);
 		returnMessage.setVisible(true);
+		scoreList = new ArrayList<Score>();
+		topFiveList = new ArrayList<Score>();
 	}
 	
 	@Override
@@ -98,5 +100,6 @@ public class ScorePane extends GraphicsPane {
 	//METHOD TO GRAB FIRST 5 ELEMENTS IN THE ARRAY LIST, IN SHOWARRAY
 	
 	//METHOD TO SHOW SHOWARRAY
+	
 	
 }
