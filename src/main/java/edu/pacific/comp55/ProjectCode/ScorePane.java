@@ -82,9 +82,18 @@ public class ScorePane extends GraphicsPane {
 			System.out.println("the scores file couldn't be found!");
 			return;
 		}
-	}	
+	}
+	
+	//while file writing isnt working...do it with just the array!
+	public void addScoreToArray(int newScore, String newName) {
+		Score addMe = new Score(newScore, newName);
+		scoreList.add(addMe);
+	}
 
 	//METHOD TO SORT THE ARRAYLIST
+	private void insertionSortScores() {
+		
+	}
 	
 	//METHOD TO GRAB FIRST 5 ELEMENTS IN THE ARRAY LIST, IN SHOWARRAY
 	

@@ -186,6 +186,8 @@ public class MainApplication extends GraphicsApplication {
 			FileWriter myWriter = new FileWriter("scores.txt");
 		    myWriter.write(game.getScore());
 		    myWriter.write("player name");
+		    //TODO: take this out when the file writing is working!
+		    scores.addScoreToArray(game.getScore(), "player name");
 		    myWriter.close();
 		    System.out.println("Successfully wrote to the file.");
 		} catch (IOException e) {
