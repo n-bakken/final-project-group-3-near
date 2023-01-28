@@ -52,6 +52,7 @@ public class ScorePane extends GraphicsPane {
 	public void mousePressed(MouseEvent e) {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
 		if (obj == background) {
+			hideLeaderboard();
 			program.switchToMenu();
 		}
 	}
@@ -92,14 +93,40 @@ public class ScorePane extends GraphicsPane {
 		scoreList.add(addMe);
 	}
 
-	//METHOD TO SORT THE ARRAYLIST
-	private void insertionSortScores() {
-		
-	}
-	
-	//METHOD TO GRAB FIRST 5 ELEMENTS IN THE ARRAY LIST, IN SHOWARRAY
-	
-	//METHOD TO SHOW SHOWARRAY
-	
+	 //SORT THE ARRAYLIST
+	   private void insertionSortScores(){
+	     //perform sorting algorithm on the scoreList array, use Score's myScore value to sort
+	   }
+	   
+	 //PUT THE TOP SCORES INTO THE SMALLER ARRAY, THIS IS SO IF THERE'S < 5 SCORES, THE REMAINING GLABELS WILL STILL BE INITIALIZED	
+	   private void initTopFiveScores(){
+	     //int listsize = size of scoreList
+	     //for loop from 0 to listsize...
+	     	//add scoreList[i] to topFiveScores 
+	     //if listsize < 5 //need to account for the other labels!
+	     	//remainingsize = 5 - listsize
+		//for loop from 0 to remainingsize...
+			//create temporary blank score
+			//add temp to topFiveScores
+	   }
+	  
+	 //SHOW SHOWARRAY (these will need to be called BEFORE the game switches to this pane!)
+	   public void readyLeaderboard(){
+	     //call all of the above functions, in the order they appear above
+		   openAndReadFile();
+		   insertionSortScores();
+		   initTopFiveScores();
+	   }
+	   public void showLeaderboard(){
+	     readyLeaderboard();
+	     //loop through the topFiveScores arraylist...
+	     	//create a GLabel for the score stats, need to update the coordinates in the constructor as i go
+		//add GLabel to the screen
+	   }
+	  //REMOVE EVERYTHING FROM THE SCREEN (call when you move away from the screen)
+	   //currently being called in mouse event in this class
+	    public void hideLeaderboard(){
+	    	//remove all the GLabels
+	    }
 	
 }
