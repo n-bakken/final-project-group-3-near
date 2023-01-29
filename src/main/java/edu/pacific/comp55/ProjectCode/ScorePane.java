@@ -108,9 +108,6 @@ public class ScorePane extends GraphicsPane {
 		   temp = scoreList;
 		   int count = 0;
 		   System.out.println("size is" + temp.size());
-//		   for(int i = 0; i<scoreList.size(); i++) {
-//			   scoreList.remove(0);
-//		   }
 		   while(temp.size()>0 && count < 25) {
 			   System.out.println("temp size: " + temp.size());
 			   //find the smallest score, add it to the real scorelist

@@ -1,8 +1,10 @@
 package edu.pacific.comp55.ProjectCode;
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 
 import acm.graphics.GImage;
 import acm.graphics.GObject;
+import edu.pacific.comp55.starter.GButton;
 import edu.pacific.comp55.starter.GraphicsPane;
 
 public class QuitPane extends GraphicsPane {
@@ -14,8 +16,6 @@ public class QuitPane extends GraphicsPane {
 		this.program = app;
 		quit = new GImage("quit1.png", 0, 0);
 		quit.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT);
-		
-		
 	}
 
 	@Override
