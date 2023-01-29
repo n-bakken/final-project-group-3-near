@@ -125,7 +125,8 @@ public class ScorePane extends GraphicsPane {
 		 initTopFiveScores();
 	   }
 	   public void showLeaderboard(){
-	     readyLeaderboard();
+		   readyLeaderboard();
+		   printScoreArray();
 	     //loop through the topFiveScores arraylist...
 	     	//create a GLabel for the score stats, need to update the coordinates in the constructor as i go
 		//add GLabel to the screen
