@@ -141,7 +141,6 @@ public class ScorePane extends GraphicsPane {
 	   public void showLeaderboard(){
 		   readyLeaderboard();
 		   printScoreArray();
-		   System.out.println("got this far");
 		   score1 = new GButton("please", 0, 0, 500, 50);
 		   score1.setFillColor(Color.white);
 		   score1.setVisible(true);
@@ -171,7 +170,8 @@ public class ScorePane extends GraphicsPane {
 			program.remove(score3);
 			program.remove(score4);
 			program.remove(score5);
-			//TODO: i think i also need to clear the arrays after
+			scoreList.clear();
+			topFiveList.clear();
 	    }
 	
 }
