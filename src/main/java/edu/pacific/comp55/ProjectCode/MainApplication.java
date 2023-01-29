@@ -181,9 +181,9 @@ public class MainApplication extends GraphicsApplication {
 //	
 	private void writeScore() {
 		try {
-			FileWriter myWriter = new FileWriter("scores.txt");
-		    myWriter.append(String.valueOf(game.getScore()) + "\n");
-		    myWriter.append("player name" + "\n");
+			FileWriter myWriter = new FileWriter("scores.txt", true);
+		    myWriter.write(String.valueOf(game.getScore()) + "\n");
+		    myWriter.write("player name" + "\n");
 		    myWriter.close();
 		    System.out.println("Successfully wrote to the file.");
 		} catch (IOException e) {
