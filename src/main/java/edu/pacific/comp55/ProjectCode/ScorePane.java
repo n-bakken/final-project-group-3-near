@@ -141,12 +141,26 @@ public class ScorePane extends GraphicsPane {
 	   public void showLeaderboard(){
 		   readyLeaderboard();
 		   printScoreArray();
-		   //score1 = new GLabel(topFiveList.get(0).toString(), 50, 50);
+		   score1 = new GLabel(topFiveList.get(0).toString(), 50, 50);
+		   score2 = new GLabel(topFiveList.get(0).toString(), 50, 100);
+		   score3 = new GLabel(topFiveList.get(0).toString(), 50, 150);
+		   score4 = new GLabel(topFiveList.get(0).toString(), 50, 200);
+		   score5 = new GLabel(topFiveList.get(0).toString(), 50, 250);
+		   program.add(score1);
+		   program.add(score2);
+		   program.add(score3);
+		   program.add(score4);
+		   program.add(score5);
 	   }
 	  //REMOVE EVERYTHING FROM THE SCREEN (call when you move away from the screen)
 	   //currently being called in mouse event in this class
 	    public void hideLeaderboard(){
 	    	//remove all the GLabels
+	    	program.remove(score1);
+	    	program.remove(score2);
+			program.remove(score3);
+			program.remove(score4);
+			program.remove(score5);
 	    }
 	
 }
