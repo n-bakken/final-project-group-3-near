@@ -192,7 +192,6 @@ public class MainApplication extends GraphicsApplication {
 	}
 	
 	public void switchToScore() {
-		scores.showLeaderboard();
 		switchToScreen(scores);
 	}
 	
