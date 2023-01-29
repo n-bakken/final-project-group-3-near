@@ -22,6 +22,6 @@ public class Score {
 		myName = theName;
 	}
 	public String toString() {
-		return String.valueOf(myScore) + " " + myName;
+		return "Score: " + String.valueOf(myScore) + " Player: " + myName;
 	}
 }

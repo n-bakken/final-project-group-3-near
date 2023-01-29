@@ -141,9 +141,7 @@ public class ScorePane extends GraphicsPane {
 	   public void showLeaderboard(){
 		   readyLeaderboard();
 		   printScoreArray();
-	     //loop through the topFiveScores arraylist...
-	     	//create a GLabel for the score stats, need to update the coordinates in the constructor as i go
-		//add GLabel to the screen
+		   //score1 = new GLabel(topFiveList.get(0).toString(), 50, 50);
 	   }
 	  //REMOVE EVERYTHING FROM THE SCREEN (call when you move away from the screen)
 	   //currently being called in mouse event in this class
