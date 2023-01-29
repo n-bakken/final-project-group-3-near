@@ -30,7 +30,7 @@ public class ScorePane extends GraphicsPane {
 		this.program = app;
 		background = new GImage("game1.png", 0, 0);
 		background.setSize(program.WINDOW_WIDTH, program.WINDOW_HEIGHT);
-		returnMessage = new GButton("Click anywhere to return to main menu.", 0, 0, 500, 50);
+		returnMessage = new GButton("Click here to return to main menu.", 0, 0, 500, 50);
 		returnMessage.setFillColor(Color.yellow);
 		returnMessage.setVisible(true);
 		scoreList = new ArrayList<Score>();
@@ -52,7 +52,7 @@ public class ScorePane extends GraphicsPane {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		GObject obj = program.getElementAt(e.getX(), e.getY());
-		if (obj == background) {
+		if (obj == returnMessage) {
 			hideLeaderboard();
 			program.switchToMenu();
 		}

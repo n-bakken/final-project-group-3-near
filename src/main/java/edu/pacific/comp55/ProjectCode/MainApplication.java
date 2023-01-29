@@ -157,8 +157,6 @@ public class MainApplication extends GraphicsApplication {
 	}
 	
 	public void switchToGameOver() {
-		//add score to leaderboard first!
-		writeScore();
 		switchToScreen(over);
 	}
 	
@@ -179,13 +177,16 @@ public class MainApplication extends GraphicsApplication {
 //		}
 //	}
 //	
-	private void writeScore() {
+	public void writeScore() {
 		try {
 			FileWriter myWriter = new FileWriter("scores.txt", true);
 		    myWriter.write(String.valueOf(game.getScore()) + "\n");
-		    myWriter.write("player name" + "\n");
+		    Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+		    System.out.println("Enter your name: ");
+		    String playerName = myObj.nextLine();
+		    myWriter.write(playerName + "\n");
 		    myWriter.close();
-		    System.out.println("Successfully wrote to the file.");
+		    myObj.close();
 		} catch (IOException e) {
 		    System.out.println("An error occurred in adding score to leaderboard.");
 		}

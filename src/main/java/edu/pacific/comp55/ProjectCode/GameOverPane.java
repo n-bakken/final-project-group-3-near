@@ -22,25 +22,20 @@ public class GameOverPane extends GraphicsPane {
 		menu = new GButton("menu", 400, 415, 240, 100); // TODO edit button location
 		menu.setColor(Color.red);
 		menu.setVisible(false);
-		
-		nameMessage = new GButton("Please enter your name in the console!", 280, 325, 500, 50);
-		nameMessage.setFillColor(Color.yellow);
-		nameMessage.setVisible(true);
-		nameMessage.sendToFront();
 	}
 
 	@Override
 	public void showContents() {
 		program.add(gameOver);
 		program.add(menu);
-		program.add(nameMessage);
+		
+		program.writeScore();
 	}
 
 	@Override
 	public void hideContents() {
 		program.remove(gameOver);
 		program.remove(menu);
-		program.remove(nameMessage);
 	}
 
 	@Override

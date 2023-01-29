@@ -1,32 +1,8 @@
-900
-player name
-0
-player name
+200
+b
 100
-player name
+nora
 0
-player name
+n
 0
-player name
-0
-player name
-0
-player name
-0
-player name
-0
-player name
-0
-player name
-0
-player name
-0
-player name
-0
-player name
-0
-player name
-0
-player name
-0
-player name
+nora
