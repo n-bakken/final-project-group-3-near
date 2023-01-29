@@ -20,11 +20,11 @@ public class ScorePane extends GraphicsPane {
 	
 	private ArrayList<Score> scoreList;
 	private ArrayList<Score> topFiveList;
-	private GLabel score1;
-	private GLabel score2;
-	private GLabel score3;
-	private GLabel score4;
-	private GLabel score5;
+	private GButton score1;
+	private GButton score2;
+	private GButton score3;
+	private GButton score4;
+	private GButton score5;
 	
 	public ScorePane(MainApplication app) {
 		this.program = app;
@@ -141,26 +141,37 @@ public class ScorePane extends GraphicsPane {
 	   public void showLeaderboard(){
 		   readyLeaderboard();
 		   printScoreArray();
-		   score1 = new GLabel(topFiveList.get(0).toString(), 50, 50);
-		   score2 = new GLabel(topFiveList.get(0).toString(), 50, 100);
-		   score3 = new GLabel(topFiveList.get(0).toString(), 50, 150);
-		   score4 = new GLabel(topFiveList.get(0).toString(), 50, 200);
-		   score5 = new GLabel(topFiveList.get(0).toString(), 50, 250);
+		   System.out.println("got this far");
+		   score1 = new GButton("please", 0, 0, 500, 50);
+		   score1.setFillColor(Color.white);
+		   score1.setVisible(true);
+		   score1.sendToFront();
+		   score2 = new GButton(topFiveList.get(1).toString(), 20, 20, program.WINDOW_WIDTH-100, 150);
+		   score2.setColor(Color.white);
+		   score3 = new GButton(topFiveList.get(2).toString(), 20, 20, program.WINDOW_WIDTH-100, 250);
+		   score3.setColor(Color.white);
+		   score4 = new GButton(topFiveList.get(3).toString(), 20, 20, program.WINDOW_WIDTH-100, 350);
+		   score4.setColor(Color.white);
+		   score5 = new GButton(topFiveList.get(4).toString(), 20, 20, program.WINDOW_WIDTH-100, 450);
+		   score5.setColor(Color.white);
 		   program.add(score1);
 		   program.add(score2);
 		   program.add(score3);
 		   program.add(score4);
 		   program.add(score5);
+		   
+		   //System.out.println("is score1 visible?" + score1.isVisible());
 	   }
 	  //REMOVE EVERYTHING FROM THE SCREEN (call when you move away from the screen)
 	   //currently being called in mouse event in this class
 	    public void hideLeaderboard(){
 	    	//remove all the GLabels
-	    	program.remove(score1);
+	    	//program.remove(score1);
 	    	program.remove(score2);
 			program.remove(score3);
 			program.remove(score4);
 			program.remove(score5);
+			//TODO: i think i also need to clear the arrays after
 	    }
 	
 }
