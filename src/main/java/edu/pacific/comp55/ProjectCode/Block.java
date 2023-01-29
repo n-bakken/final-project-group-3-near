@@ -76,7 +76,7 @@ public class Block {
 				return 2;
 			}
 			if(returnMe[i].getRow()+1 > 20) {
-				System.out.println("move out of bounds!");
+				//System.out.println("move out of bounds!");
 				return 0;
 			}
 		}
@@ -89,7 +89,7 @@ public class Block {
 		for(int i = 0; i<returnMe.length; i++) {
 			//each col +1 when we move right, bounds check first
 			if(returnMe[i].getCol()+1 > 9) {
-				System.out.println("move out of bounds!");
+				//System.out.println("move out of bounds!");
 				return false;
 			}
 		}
@@ -101,7 +101,7 @@ public class Block {
 		Space[] returnMe = spacesOccupied();
 		for(int i = 0; i<returnMe.length; i++) {
 			if(returnMe[i].getCol()-1 < 0) {
-				System.out.println("move out of bounds!");
+				//System.out.println("move out of bounds!");
 				return false;
 			}
 		}
@@ -371,7 +371,7 @@ void rotateLeft() {
 	
 	public void printSpaces() {
 		for (int i = 0; i < 4; i++) {
-			System.out.println(spacesOccupied[i]);
+			//System.out.println(spacesOccupied[i]);
 		}
 	}
 	
@@ -382,14 +382,14 @@ void rotateLeft() {
 	// Block Testing
 	public static void main(String[] args) {
 		Block newBlock = new Block(Orientation.UP, false, false, 1,1);
-		System.out.println(newBlock);
+		//System.out.println(newBlock);
 		newBlock.setStartSpace(3,7);
-		System.out.println(newBlock);
+		//System.out.println(newBlock);
 		
 		
 		Space spaces[] = newBlock.spacesOccupied();
 		for (int i = 0; i < 4; i++) {
-			System.out.println(spaces[i]);
+			//System.out.println(spaces[i]);
 		}
 	}
 }

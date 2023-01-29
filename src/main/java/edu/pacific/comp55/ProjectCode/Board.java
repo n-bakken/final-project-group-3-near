@@ -61,7 +61,6 @@ public class Board {
 			activeBlock.setStartSpace(1,4);
 		}
 		
-		System.out.println(activeBlock);
 		blocksOnBoard.add(activeBlock);
 		
 		Space[] spaces = new Space[4];
@@ -96,7 +95,6 @@ public class Board {
 			activeBlock.setStartSpace(1,4);
 		}
 		
-		System.out.println(activeBlock);
 		blocksOnBoard.add(activeBlock);
 		
 		Space[] spaces = new Space[4];
@@ -342,7 +340,7 @@ public class Board {
 			return false;
 		}
 		else if(activeBlock.canMoveDown()==2) {
-			System.out.println("block placed!");
+			//block placed
 			activeBlock = null;
 			if (this.fullBoard() == true) {
 				return false;
@@ -355,7 +353,7 @@ public class Board {
 		for(int i = 0; i<spacesOccupied.length; i++) {
 			Space s = new Space(spacesOccupied[i].getRow()+1, spacesOccupied[i].getCol());
 			if(getBlock(s) != null && getBlock(s) != activeBlock) {
-				System.out.println("block placed!");
+				//block placed
 				activeBlock = null;
 				if (this.fullBoard() == true) {
 					return false;
@@ -392,14 +390,13 @@ public class Board {
 	public boolean moveActiveBlockLeft() {
 		//check if it can move considering the bounds of the board
 		if(!activeBlock.canMoveLeft()) {
-			//System.out.println("can't move left");
 			return false;
 		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
 		for(int i = 0; i<spacesOccupied.length; i++) {
 			Space s = new Space(spacesOccupied[i].getRow(), spacesOccupied[i].getCol()-1);
 			if(getBlock(s) != null && getBlock(s) != activeBlock) {
-				System.out.println("there's already a block there!");
+				//theres already a block there
 				return false;
 			}
 		}
@@ -413,14 +410,14 @@ public class Board {
 	public boolean moveActiveBlockRight() {
 		//check if it can move considering the bounds of the board
 		if(!activeBlock.canMoveRight()) {
-			//System.out.println("can't move right");
+			//cant move right
 			return false;
 		}
 		Space[] spacesOccupied = activeBlock.spacesOccupied();
 		for(int i = 0; i<spacesOccupied.length; i++) {
 			Space s = new Space(spacesOccupied[i].getRow(), spacesOccupied[i].getCol()+1);
 			if(getBlock(s) != null && getBlock(s) != activeBlock) {
-				System.out.println("there's already a block there!");
+				//theres already a block there
 				return false;
 			}
 		}
@@ -473,16 +470,16 @@ public class Board {
 		Board b = new Board();
 		b.createNextBlock(Orientation.UP, false, false, 0,0);
 		b.spawnBlock();
-		System.out.println(b.getHeldBlock());
+		//System.out.println(b.getHeldBlock());
 		b.holdBlock();
 		b.instantFall();
-		System.out.println(b.getHeldBlock());
+		//System.out.println(b.getHeldBlock());
 		b.holdBlock();
 		b.instantFall();
-		System.out.println(b.getHeldBlock());
+		//System.out.println(b.getHeldBlock());
 		b.holdBlock();
 		b.instantFall();
-		System.out.println(b.getHeldBlock());
+		//System.out.println(b.getHeldBlock());
 		b.holdBlock();
 		b.instantFall();
 		

@@ -113,7 +113,7 @@ public class Game {
 				board.clearLine();
 			}
 		}
-		System.out.println("game over!");
+		//System.out.println("game over!");
 		
 	}
 

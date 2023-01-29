@@ -107,9 +107,7 @@ public class ScorePane extends GraphicsPane {
 		   ArrayList<Score> temp = new ArrayList<Score>();
 		   temp = scoreList;
 		   int count = 0;
-		   System.out.println("size is" + temp.size());
 		   while(temp.size()>0 && count < 25) {
-			   System.out.println("temp size: " + temp.size());
 			   //find the smallest score, add it to the real scorelist
 			   scoreList.add(temp.get(findMin(temp)));
 			   //remove it and loop continues
@@ -128,7 +126,6 @@ public class ScorePane extends GraphicsPane {
 				   returnMe = i;
 			   }
 		   }
-		   System.out.println("returnMe " + returnMe);
 		   return returnMe;
 	   }
 	   
@@ -168,7 +165,7 @@ public class ScorePane extends GraphicsPane {
 	   
 	   public void showLeaderboard(){
 		   readyLeaderboard();
-		   printArrayList(scoreList);
+		   //printArrayList(scoreList);
 		   score1 = new GButton(topFiveList.get(0).toString(), 20, 100, program.WINDOW_WIDTH-100, 100);
 		   score1.setFillColor(Color.white);
 		   score1.setVisible(true);

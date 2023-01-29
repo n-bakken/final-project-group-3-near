@@ -111,7 +111,6 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		justPaused = false;
 		
 		if (board.fullBoard()) {
-			System.out.println("game over!");
 			gameTimer.stop();
 			program.stopTime();
 			program.stopSound();
@@ -120,7 +119,6 @@ public class GamePane extends GraphicsPane implements ActionListener {
 		}
 		
 		if(gamePaused) {
-			System.out.println("game is paused");
 			justPaused = true;
 			return;
 		}

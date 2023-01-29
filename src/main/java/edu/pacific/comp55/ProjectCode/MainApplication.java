@@ -64,7 +64,6 @@ public class MainApplication extends GraphicsApplication {
 		add(scoreLabel);
 		add(score);
 	
-		System.out.println("Hello, world!");
 		over = new GameOverPane(this);
 		quit = new QuitPane(this);
 		pause = new PausePane(this);
