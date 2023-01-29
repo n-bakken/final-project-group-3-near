@@ -89,9 +89,9 @@ public class ScorePane extends GraphicsPane {
 	}
 	
 	//print array...for testing!
-	public void printScoreArray() {
-		for(int i = 0; i<scoreList.size(); i++) {
-			System.out.println(scoreList.get(i).toString());
+	public void printArrayList(ArrayList<Score> printMe) {
+		for(int i = 0; i<printMe.size(); i++) {
+			System.out.println(printMe.get(i).toString());
 		}
 	}
 	
@@ -102,8 +102,37 @@ public class ScorePane extends GraphicsPane {
 	}
 
 	 //SORT THE ARRAYLIST
-	   private void insertionSortScores(){
+	   private void sortScores(){
 	     //perform sorting algorithm on the scoreList array, use Score's myScore value to sort
+		   ArrayList<Score> temp = new ArrayList<Score>();
+		   temp = scoreList;
+		   int count = 0;
+		   System.out.println("size is" + temp.size());
+//		   for(int i = 0; i<scoreList.size(); i++) {
+//			   scoreList.remove(0);
+//		   }
+		   while(temp.size()>0 && count < 25) {
+			   System.out.println("temp size: " + temp.size());
+			   //find the smallest score, add it to the real scorelist
+			   scoreList.add(temp.get(findMin(temp)));
+			   //remove it and loop continues
+			   temp.remove(findMin(temp));
+			   count++;
+		   }
+	   }
+	   
+	   //returns the index of the maximum score in the arraylist
+	   private int findMin(ArrayList<Score> findMe) {
+		   int temp = findMe.get(0).getScore();
+		   int returnMe = 0;
+		   for(int i = 0; i<findMe.size(); i++) {
+			   if(findMe.get(i).getScore() < temp) {
+				   temp = findMe.get(i).getScore();
+				   returnMe = i;
+			   }
+		   }
+		   System.out.println("returnMe " + returnMe);
+		   return returnMe;
 	   }
 	   
 	 //PUT THE TOP SCORES INTO THE SMALLER ARRAY, THIS IS SO IF THERE'S < 5 SCORES, THE REMAINING GLABELS WILL STILL BE INITIALIZED	
@@ -136,13 +165,13 @@ public class ScorePane extends GraphicsPane {
 	   public void readyLeaderboard(){
 	     //call all of the above functions, in the order they appear above
 		 openAndReadFile();
-		 insertionSortScores();
+		 sortScores();
 		 initTopFiveScores();
 	   }
 	   
 	   public void showLeaderboard(){
 		   readyLeaderboard();
-		   printScoreArray();
+		   printArrayList(scoreList);
 		   score1 = new GButton(topFiveList.get(0).toString(), 20, 100, program.WINDOW_WIDTH-100, 100);
 		   score1.setFillColor(Color.white);
 		   score1.setVisible(true);
@@ -168,8 +197,8 @@ public class ScorePane extends GraphicsPane {
 		   program.add(score3);
 		   program.add(score4);
 		   program.add(score5);
-		   
 	   }
+	   
 	  //REMOVE EVERYTHING FROM THE SCREEN (call when you move away from the screen)
 	   //currently being called in mouse event in this class
 	    public void hideLeaderboard(){
@@ -179,6 +208,7 @@ public class ScorePane extends GraphicsPane {
 			program.remove(score3);
 			program.remove(score4);
 			program.remove(score5);
+			//need to clear the arrays too because of duplicates
 			scoreList.clear();
 			topFiveList.clear();
 	    }
