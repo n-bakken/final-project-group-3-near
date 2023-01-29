@@ -21,4 +21,7 @@ public class Score {
 	public void setName(String theName) {
 		myName = theName;
 	}
+	public String toString() {
+		return String.valueOf(myScore) + " " + myName;
+	}
 }

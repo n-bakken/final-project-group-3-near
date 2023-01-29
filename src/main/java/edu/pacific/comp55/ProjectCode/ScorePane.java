@@ -87,6 +87,13 @@ public class ScorePane extends GraphicsPane {
 		}
 	}
 	
+	//print array...for testing!
+	public void printScoreArray() {
+		for(int i = 0; i<scoreList.size(); i++) {
+			System.out.println(scoreList.get(i).toString());
+		}
+	}
+	
 	//while file writing isnt working...do it with just the array!
 	public void addScoreToArray(int newScore, String newName) {
 		Score addMe = new Score(newScore, newName);
