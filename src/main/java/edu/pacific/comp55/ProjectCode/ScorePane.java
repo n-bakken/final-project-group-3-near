@@ -107,14 +107,28 @@ public class ScorePane extends GraphicsPane {
 	   
 	 //PUT THE TOP SCORES INTO THE SMALLER ARRAY, THIS IS SO IF THERE'S < 5 SCORES, THE REMAINING GLABELS WILL STILL BE INITIALIZED	
 	   private void initTopFiveScores(){
-	     //int listsize = size of scoreList
-	     //for loop from 0 to listsize...
-	     	//add scoreList[i] to topFiveScores 
-	     //if listsize < 5 //need to account for the other labels!
-	     	//remainingsize = 5 - listsize
-		//for loop from 0 to remainingsize...
-			//create temporary blank score
-			//add temp to topFiveScores
+	     int listsize = scoreList.size();
+	     if(listsize < 5) {
+	    	 //going to need some blank scores to fill in the other GLabels
+	    	 //go as far as i can with the list I have...
+	    	 for(int i = 0; i<listsize; i++) {
+	    		 topFiveList.add(scoreList.get(i));
+	    	 }
+	    	 int remainingSize = 5-listsize;
+	    	 //then fill in the rest with blanks
+	    	 for(int i = 0; i<remainingSize; i++) {
+	    		//create temporary blank score
+	 			//add temp to topFiveScores
+	    		 Score temp = new Score(0, "N/A");
+	    		 topFiveList.add(temp);
+	    	 }
+	     }
+	     else {
+		     //add scoreList[i] to topFiveScores 
+	    	 for(int i = 0; i<5; i++) {
+	    		 topFiveList.add(scoreList.get(i));
+	    	 }
+	     }
 	   }
 	  
 	 //SHOW SHOWARRAY (these will need to be called BEFORE the game switches to this pane!)
